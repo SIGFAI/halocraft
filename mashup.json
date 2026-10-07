@@ -1,0 +1,135 @@
+{
+  "id": "sigf/halocraft",
+  "version": "0.1.2",
+  "name": "HaloCraft",
+  "tagline": "Minecraft inside Halo: Combat Evolved: build, mine Halo's terrain and fight the Covenant with Minecraft weapons and mobs.",
+  "how_to_play": [
+    "Halo CE's levels with Minecraft's movement, inventory, blocks and combat: Chief follows Steve, and Minecraft weapons and mobs hurt the Covenant and the Flood.",
+    "Press Play: HaloCraft starts its hidden Minecraft, then Halo: MCC with anti-cheat disabled. Pick any Halo CE campaign mission or a local custom game.",
+    "E inventory, 1-9 or the wheel for the hotbar, Q drop, T chat, / commands, as in Minecraft. F5 switches Minecraft's camera view.",
+    "Dig Halo's terrain a block at a time or blast it with TNT: dirt, sand, rock and metal drop what they are made of. Each level starts with a fresh starter kit.",
+    "Esc opens Halo's pause menu or closes a Minecraft screen. F9 unloads the mod."
+  ],
+  "kind": "passthrough",
+  "games": [
+    {
+      "game": "halomcc",
+      "role": "host",
+      "label": "Halo: The Master Chief Collection (Halo: CE)",
+      "engine": "Halo CE in MCC (D3D11, x64) + Spark mod loader + halocraft.dll (C++)",
+      "apps": {
+        "steam": "976730"
+      },
+      "runtime": "MCC on Steam with Halo: CE installed, run with anti-cheat disabled (offline); no build pinned"
+    },
+    {
+      "game": "minecraft",
+      "role": "guest",
+      "label": "Minecraft",
+      "engine": "Minecraft Java 26.3 + Fabric mod skycraft 0.1.2 (HaloCraft build), in the author's bundled portable Prism 11.1.1",
+      "mc": "26.3",
+      "loader": "fabric@0.19.5",
+      "java": "25"
+    }
+  ],
+  "requires": [
+    {
+      "id": "minecraft-account",
+      "page": "https://www.minecraft.net/store/minecraft-java-bedrock-edition-pc",
+      "note": "a Microsoft account that owns Minecraft: Java Edition: the first launch opens HaloCraft's own Prism window to sign in, then it downloads Minecraft and Java"
+    }
+  ],
+  "install": [
+    {
+      "game": "halomcc",
+      "strategy": "game-dir-snapshot",
+      "files": [
+        {
+          "src": "HaloCraft-0.1.2.zip",
+          "dst": "{game}/HaloCraft",
+          "unpack": true,
+          "contents": [
+            {
+              "path": "halocraft.dll",
+              "sha256": "0eb975d856f8a04942bb12f6ee31ef38233047eeeca6f8af450e6941577fc85b"
+            },
+            {
+              "path": "HaloCraft.exe",
+              "sha256": "00ed4cdff28b68ff804790dc85aaad6a279b8e4d20ffbf77811cdc7dcf7a35d6"
+            },
+            {
+              "path": "HaloCraft-Minecraft.zip",
+              "sha256": "bbf63f10e5a52bfe493a2cb14cc2fa96783b9d78cdb8043605a554f758ec4e59"
+            },
+            {
+              "path": "LICENSE.txt",
+              "sha256": "0fb7d37d9a24eb0d26afd6f058518edcda55718372c3e7525d30370efe4161c8"
+            },
+            {
+              "path": "README.txt",
+              "sha256": "3ddf9639af96f9293eef1b23fb0efb851f33fd25e5f84bc9c9f0e76770aba801"
+            },
+            {
+              "path": "spark.dll",
+              "sha256": "5d7e4346564ced5ec781c98c357d48db03bad44f84605f2dd1150f30ecf1cff7"
+            },
+            {
+              "path": "THIRD-PARTY-NOTICES.md",
+              "sha256": "9cb1bda531b12edb4b220cb7c86673cc0b72bb2143a6d2998a3bbcabb97b0391"
+            }
+          ],
+          "url": "https://github.com/festella22/halocraft/releases/download/v0.1.2/HaloCraft-0.1.2.zip",
+          "sha256": "3c110d9587bc0bb3420851906a2a9b68867171df742af47cbd7fd7bf38b0ee1d",
+          "size": 24680740
+        }
+      ]
+    }
+  ],
+  "launch": [
+    {
+      "game": "halomcc",
+      "exe": "HaloCraft/HaloCraft.exe",
+      "args": []
+    }
+  ],
+  "files": [
+    {
+      "name": "HaloCraft-0.1.2.zip",
+      "url": "https://github.com/festella22/halocraft/releases/download/v0.1.2/HaloCraft-0.1.2.zip",
+      "sha256": "3c110d9587bc0bb3420851906a2a9b68867171df742af47cbd7fd7bf38b0ee1d",
+      "size": 24680740
+    }
+  ],
+  "source": {
+    "repo": "https://github.com/festella22/halocraft",
+    "license": "MIT + no license (upstream download)",
+    "upstream_license": "MIT (HaloCraft, SkyCraft); bundled spark.dll has no license",
+    "fetch": "upstream",
+    "tag": "v0.1.2",
+    "commit": "b6e664d563811667d162bd4569d698fdbe8c8ea9",
+    "hosted": "https://github.com/SIGFAI/halocraft",
+    "based_on": "https://github.com/chasmlol/SkyCraft"
+  },
+  "media": {
+    "cover": "https://raw.githubusercontent.com/festella22/halocraft/b6e664d563811667d162bd4569d698fdbe8c8ea9/docs/building.jpg"
+  },
+  "built_by": {
+    "author": "festella22",
+    "authors": [
+      "festella22",
+      "chasmlol (SkyCraft)",
+      "KodyJKing (Spark)"
+    ],
+    "packaged_by": "SIGF"
+  },
+  "idea_by": "festella22",
+  "built_at": "2026-10-07T00:00:00.000Z",
+  "status": "beta",
+  "issues": false,
+  "notes": [
+    "You need Halo: The Master Chief Collection on Steam with Halo: CE installed, and a Microsoft account that owns Minecraft: Java Edition. The first Play opens HaloCraft's own Prism window to sign in, then downloads Minecraft and Java (a few minutes).",
+    "Offline only: HaloCraft runs MCC with anti-cheat disabled. Never take the modded game online. Windows may warn that HaloCraft.exe is not signed: More info > Run anyway.",
+    "Restore removes the HaloCraft folder. HaloCraft also copies spark.dll and mods\\halocraft.dll into MCC\\Binaries\\Win64 and keeps its Minecraft in %LOCALAPPDATA%\\HaloCraft: delete those by hand to remove it fully (they do nothing without HaloCraft.exe).",
+    "Uses SkyCraft's link names: do not run it together with SkyCraft or another SkyCraft port. Early and experimental; the author has no issue tracker, and an MCC update can break it."
+  ]
+}
